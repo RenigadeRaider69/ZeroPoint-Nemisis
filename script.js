@@ -46,6 +46,8 @@ function createCharacterCard(character) {
     card.innerHTML = `
         <h3>${character.name}</h3>
         <p>Role: ${character.role}</p>
+        <p>Abilities: ${character.abilities.join(", ")}</p>
+        <p>Ultimate: ${character.ultimate}</p>
         <button onclick="selectCharacter('${character.name}')">Select</button>
     `;
     return card;
@@ -63,15 +65,33 @@ function createGuild() {
     // Add logic to handle guild creation
 }
 
-// Example Character Data
+// Full Character Roster
 const characters = [
-    { name: "Dracual Master", role: "DPS" },
-    { name: "Iron Sentinel", role: "Tank" },
-    { name: "Celestial Healer", role: "Healer" },
+    // DPS (24 Characters)
+    { name: "Dracual Master", role: "DPS", abilities: ["Shadow Strike", "Life Drain"], ultimate: "Blood Requiem" },
+    { name: "Storm Chaser", role: "DPS", abilities: ["Thunder Dash", "Lightning Bolt"], ultimate: "Storm Surge" },
+    // (Add 22 more DPS characters here, each with unique abilities and ultimates)
+    
+    // Tanks (9 Characters)
+    { name: "Iron Sentinel", role: "Tank", abilities: ["Shield Bash", "Fortress"], ultimate: "Iron Wall" },
+    { name: "Stone Guardian", role: "Tank", abilities: ["Rock Barrage", "Earthen Grasp"], ultimate: "Earthquake" },
+    // (Add 7 more Tank characters here)
+
+    // Healers (8 Characters)
+    { name: "Celestial Healer", role: "Healer", abilities: ["Radiant Light", "Blessing Aura"], ultimate: "Divine Restoration" },
+    { name: "Forest Mystic", role: "Healer", abilities: ["Nature's Touch", "Healing Vine"], ultimate: "Verdant Renewal" },
+    // (Add 6 more Healer characters here)
 ];
 
 // Select Character Logic
 function selectCharacter(characterName) {
-    console.log(`✅ Character Selected: ${characterName}`);
-    // Add further logic to proceed with the selected character
+    const character = characters.find(c => c.name === characterName);
+    if (character) {
+        console.log(`✅ Character Selected: ${character.name}`);
+        console.log(`Role: ${character.role}`);
+        console.log(`Abilities: ${character.abilities.join(", ")}`);
+        console.log(`Ultimate: ${character.ultimate}`);
+    } else {
+        console.log("❌ Character not found.");
+    }
 }
