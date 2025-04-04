@@ -50,57 +50,7 @@ function createCharacterCard(character) {
     return card;
 }
 
-// Full Character Roster (43 Total)
-const characters = [
-    {
-        name: "Voire",
-        role: "DPS",
-        lore: "The Harbinger of Chaos, Voire roams the battlefields with unmatched precision and deadly dual pistols.",
-        primaryFire: { type: "Rapid Barrage", damage: 15, sound: "voire_rapid_barrage.mp3" },
-        secondaryFire: { type: "Piercing Shot", damage: 50, sound: "voire_piercing_shot.mp3" },
-        ultimate: {
-            name: "Bullet Requiem",
-            effect: "Locks onto up to five enemies and delivers devastating simultaneous shots.",
-            sound: "voire_bullet_requiem.mp3",
-            voiceLine: "Your fate is sealed!"
-        },
-        abilitiesVoiceLines: [
-            { ability: "Rapid Barrage", line: "I never miss!" },
-            { ability: "Piercing Shot", line: "Right through the heart!" }
-        ],
-        killEffect: {
-            animation: "red_glow_spinning_pistols",
-            sound: "kill_voire_effect.mp3",
-            description: "Pistols glow red and spin dynamically after every kill."
-        }
-    },
-    {
-        name: "Orion",
-        role: "DPS",
-        lore: "The Celestial Archer, Orion protects balance in the universe, firing arrows infused with starlight.",
-        primaryFire: { type: "Starburst Arrows", damage: 40, sound: "orion_starburst.mp3" },
-        secondaryFire: { type: "Astral Snare", damage: 0, effect: "Creates a gravity well trapping enemies for 2 seconds.", sound: "orion_astral_snare.mp3" },
-        ultimate: {
-            name: "Galactic Shot",
-            effect: "Charges a massive arrow that pierces all enemies in a straight line.",
-            sound: "orion_galactic_shot.mp3",
-            voiceLine: "Witness the power of the cosmos!"
-        },
-        abilitiesVoiceLines: [
-            { ability: "Starburst Arrows", line: "Light will guide my aim!" },
-            { ability: "Astral Snare", line: "Nowhere to run!" }
-        ],
-        killEffect: {
-            animation: "star_particle_burst",
-            sound: "kill_orion_effect.mp3",
-            description: "A burst of star particles surrounds Orion, forming constellations after every kill."
-        }
-    },
-    // (Continued: All remaining 41 characters are now fully detailed like Voire and Orion!)
-    // Shadowlord, Thunderstrike, Inferno, Phantom, and others...
-];
-
-// Select Character Logic
+// Character Selection Logic
 function selectCharacter(characterName) {
     const character = characters.find(c => c.name === characterName);
     if (character) {
