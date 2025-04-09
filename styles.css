@@ -1,20 +1,31 @@
+/* General Reset */
+body, h1, h2, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #1e1e2f, #0d0d14);
     color: #ffffff;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 0;
 }
 
+/* Header Styling */
 header {
     background: #12121b;
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #29293b;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #50fa7b;
 }
 
 header nav ul {
@@ -25,7 +36,39 @@ header nav ul {
     margin-top: 15px;
 }
 
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #50fa7b;
+    color: #12121b;
+}
+
+/* Section Styling */
+section {
+    padding: 40px;
+    text-align: center;
+    border-bottom: 1px solid #29293b;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff79c6;
+}
+
 section button {
+    background-color: #50fa7b;
+    color: #12121b;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -37,15 +80,16 @@ section button:hover {
     color: #ffffff;
 }
 
+/* Footer Styling */
 footer {
     background: #12121b;
     text-align: center;
     padding: 20px;
     border-top: 2px solid #29293b;
+    margin-top: 40px;
 }
 
-h1 {
-    text-align: center;
-    width: 45%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+footer p {
+    font-size: 1rem;
+    color: #888888;
 }
